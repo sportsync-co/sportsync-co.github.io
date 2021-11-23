@@ -53,23 +53,70 @@
     /* Centered text */
     .centered {
         position: absolute;
-        top: 50%;
+        top: 75%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
 
+
+    @keyframes fadeEffect { /* from 0 to full opacity */
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    .toptexts2 {
+        /*color: #3333;*/
+        animation: fadeEffect 5s; /* fading effect takes 3s */
+        font-family: 'Helvetica Neue', sans-serif;
+        font-size: 50px;
+        font-weight: bold;
+        letter-spacing: -1px;
+        line-height: 1;
+        text-align: center;
+    }
+
 </style>
 
+<script>
+
+    window.addEventListener("scroll", onScroll);
+    window.addEventListener("click", onClick);
+
+
+    function onClick() {
+        if (document.body.scrollTop >= 0 || document.documentElement.scrollTop >= 0) {
+            document.getElementById("toptexts2").style.display = "block";
+        } else {
+            document.getElementById("toptexts2").style.display = "none";
+        }
+    }
+
+    function onScroll() {
+        if (document.body.scrollTop > 90 || document.documentElement.scrollTop > 90) {
+            document.getElementById("toptexts2").style.display = "block";
+        } else {
+            document.getElementById("toptexts2").style.display = "none";
+        }
+    }
+
+</script>
 <div align="center"></div>
 
 <div class="container">
-<!--    <img src="static/images/78171773_padded_logo.png" id="bg">-->
     <img src="static/images/78171773_padded_logo.png" alt="Snow" style="width:100%;">
     <div class="bottom-left">Bottom Left</div>
     <div class="top-left">Top Left</div>
     <div class="top-right">Top Right</div>
     <div class="bottom-right">Bottom Right</div>
-    <div class="centered">Centered</div>
+    <div class="centered">
+        <div class="toptexts2" id="toptexts2">
+            <div>Application in development and arriving ~ Summer 2022.</div>
+        </div>
+    </div>
 </div>
 
 </body>
