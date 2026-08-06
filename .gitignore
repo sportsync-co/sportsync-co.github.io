@@ -105,3 +105,7 @@ dist
 
 # TernJS port file
 .tern-port
+tmp
+temp
+tmp/worktrees
+temp/worktrees
